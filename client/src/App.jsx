@@ -1,7 +1,7 @@
 // Import React library
 import React from 'react';
 // Import BrowserRouter for routing, Routes for route definitions, Route for individual routes
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // Import all page components
 import Home from './pages/Home';
@@ -25,7 +25,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 function App() {
     return (
         // BrowserRouter enables routing in the application
-        <BrowserRouter>
+        <HashRouter>
             {/* Routes component contains all route definitions */}
             <Routes>
                 {/* Public Routes - No authentication required */}
@@ -128,7 +128,7 @@ function App() {
                 {/* Redirect any unknown routes to home */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
