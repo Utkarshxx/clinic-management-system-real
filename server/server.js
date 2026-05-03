@@ -32,7 +32,11 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/clinic
 // ============================================
 
 // Enable CORS - allows frontend to communicate with backend
-app.use(cors());
+app.use(cors({
+    origin: process.env.FRONTEND_URL || "*", // Fallback to allow all during setup
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 
 // Body parser middleware - parses incoming JSON requests
 app.use(bodyParser.json());
