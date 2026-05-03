@@ -62,7 +62,7 @@ mongoose.connect(MONGODB_URI)
         console.log('📊 Database: clinic_management');
     })
     .catch((error) => {
-        console.error('❌ MongoDB connection error:', error.message);
+        console.error('❌ MongoDB FULL ERROR:', error);
     });
 
 // ============================================
