@@ -1,11 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Vite configuration for React project
 export default defineConfig({
-    plugins: [react()],
-    server: {
-        port: 3000,
-        open: true
-    }
+  plugins: [react()],
+  preview: {
+    host: true,
+    port: 10000,
+    allowedHosts: [
+      "clinic-management-system-real-2.onrender.com"
+    ]
+  }
 })
